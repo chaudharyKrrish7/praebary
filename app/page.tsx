@@ -7,7 +7,7 @@ import {
   ArrowUpRight, Mail, Star, Quote, Heart, BookOpen
 } from 'lucide-react';
 
-// --- DATA ARCHIVE: ALL 16 ASSETS ---
+// --- DATA ARCHIVE: ALL 16 ASSETS -
 const BOOKS_DATA = [
   { id: '1', title: "The Alchemist", author: "Paulo Coelho", price: 199, category: "Classics", assetRating: "Stable", condition: "Pristine", image: "https://m.media-amazon.com/images/I/71aFt4+OTOL._AC_UF1000,1000_QL80_.jpg", curatorNote: "A fable about following your dream.", provenance: "Acquired from a private collection in DLF Phase 5.", rating: 5, reviews: [{ user: "Alex", rating: 5, comment: "Timeless wisdom." }] },
   { id: '2', title: "Atomic Habits", author: "James Clear", price: 299, category: "Growth", assetRating: "High", condition: "Like New", image: "https://m.media-amazon.com/images/I/91bYsX41DVL._AC_UF1000,1000_QL80_.jpg", curatorNote: "The definitive guide to habit formation.", provenance: "Direct archive acquisition.", rating: 4, reviews: [{ user: "Jordan", rating: 4, comment: "Practical and insightful." }] },
@@ -49,21 +49,21 @@ export default function Home() {
   const cursorRef = useRef(null);
   const cursorDotRef = useRef(null);
 
-  useEffect(() => {
-    const moveCursor = (e: MouseEvent) => {
-      if (cursorRef.current && cursorDotRef.current) {
-        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-        cursorDotRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
-      }
-    };
-    window.addEventListener('mousemove', moveCursor);
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener('mousemove', moveCursor);
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const moveCursor = (e: MouseEvent) => {
+  //     if (cursorRef.current && cursorDotRef.current) {
+  //       cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+  //       cursorDotRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+  //     }
+  //   };
+  //   window.addEventListener('mousemove', moveCursor);
+  //   const handleScroll = () => setScrolled(window.scrollY > 50);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener('mousemove', moveCursor);
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const handleCheckout = (type) => {
     const handle = "praebary";
